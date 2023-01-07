@@ -15,26 +15,52 @@
 
 html {
   height: 100%;
-  font-family: "Monserrat", sans-serif;
-
+  font-family: "Lato", sans-serif;
 }
 
 body {
   height: 100vh;
+  background-color: hsla(0, 0%, 0%, 0.932);
 }
 
 input, button, textarea, select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+/* p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
-}
+} */
 
-img {
+/* img {
   display: block;
   max-width: 100%;
   height: auto;
+} */
+
+
+#container {
+
+  display: inline-grid;
+  grid-template-columns: repeat(16, 2fr);
+  grid-template-rows: repeat(16, 2fr);
+  border: 2px solid rgb(248, 6, 6);
+  width: 400px;
+  height: 400px;
 }
+
+.square {
+  background-color: rgb(41, 40, 40);
+  /* width: 30px;
+  height: 30px; */
+}
+
+#container div:hover {
+background-color: lightgray;
+}
+
+.hovered {
+  background-color: red;
+}
+
 
 
