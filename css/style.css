@@ -5,12 +5,9 @@
   list-style: none;
 }
 
-*::before, *::after {
+*::before,
+*::after {
   box-sizing: border-box;
-}
-
-:root {
-
 }
 
 html {
@@ -25,22 +22,62 @@ body {
   flex-direction: column;
   align-items: center;
   color: white;
+  text-align: center;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-/* p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-} */
+.instructions-container {
+  width: 350px;
+  margin-bottom: 1rem;
+}
 
-/* img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-} */
+.instructions-container p {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+}
 
+.button-92 {
+  --c: #fff;
+  /* text color */
+  background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%)
+      var(--_p, 100%) / 300% no-repeat,
+    #ad062a;
+  /* background color */
+  color: #0000;
+  border: none;
+  transform: perspective(500px) rotateY(calc(20deg * var(--_i, -1)));
+  text-shadow: calc(var(--_i, -1) * 0.08em) -0.01em 0 var(--c),
+    calc(var(--_i, -1) * -0.08em) 0.01em 2px #0004;
+  outline-offset: 0.1em;
+  transition: 0.3s;
+}
+
+.button-92:hover,
+.button-92:focus-visible {
+  --_p: 0%;
+  --_i: 1;
+}
+
+.button-92:active {
+  text-shadow: none;
+  color: var(--c);
+  box-shadow: inset 0 0 9e9Q #0005;
+  transition: 0s;
+}
+
+.button-92 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+  cursor: pointer;
+  padding: 0.1em 0.3em;
+}
 
 #container {
   display: inline-grid;
@@ -53,16 +90,12 @@ input, button, textarea, select {
 
 .square {
   background-color: rgb(41, 40, 40);
-
 }
 
 #container div:hover {
-background-color: lightgray;
+  background-color: lightgray;
 }
 
 .hovered {
   background-color: rgb(87, 84, 84);
 }
-
-
-

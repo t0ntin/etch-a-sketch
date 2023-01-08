@@ -13,6 +13,10 @@ const adjustGrid = (numberOfSquares) => {
   container.style.gridTemplateRows = `repeat(${numberOfSquares}, 1fr)`;
 };
 
+for (let i = 0; i < 256; i++) {
+  generateSquares();
+}
+
 const checkGridSize = (numberOfSquares) => {
   let correctSize;
   if (numberOfSquares > 3 && numberOfSquares < 81) {
@@ -23,10 +27,6 @@ const checkGridSize = (numberOfSquares) => {
   }
   return correctSize;
 };
-
-for (let i = 0; i < 256; i++) {
-  generateSquares();
-}
 
 container.addEventListener("mouseover", (event) => {
   event.target.classList.add("hovered");
@@ -39,8 +39,10 @@ const changeGridSize = (numberOfSquares) => {
     for (let i = 0; i < totalSquares; i++) {
       generateSquares();
     }
+    adjustGrid(numberOfSquares);
+  } else {
+    return;
   }
-  adjustGrid(numberOfSquares);
 };
 
 gridSizeBtn.onclick = () => {
@@ -51,4 +53,9 @@ gridSizeBtn.onclick = () => {
 resetBtn.onclick = (numberOfSquares) => {
   changeGridSize(16);
   adjustGrid(numberOfSquares);
+  // container.classList.remove("hovered"); This didn't work
+  const squares = document.querySelectorAll(".square");
+  squares.forEach((square) => {
+    square.classList.remove("hovered");
+  });
 };
